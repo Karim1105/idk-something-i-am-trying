@@ -7,7 +7,7 @@ import { UserRole, ReportStatus, ListingStatus } from '@/types';
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await requireRole([UserRole.ADMIN]);
@@ -15,8 +15,9 @@ export async function PUT(
 
     const body = await request.json();
     const { action, notes } = body;
+    const { id } = await params;
 
-    const report = await Report.findById(params.id);
+    const report = await Report.findById(id);
     if (!report) {
       return NextResponse.json({ error: 'Report not found' }, { status: 404 });
     }
@@ -55,7 +56,7 @@ export async function PUT(
       };
     }
 
-    const updatedReport = await Report.findByIdAndUpdate(params.id, updateData, {
+    const updatedReport = await Report.findByIdAndUpdate(id, updateData, {
       new: true,
     });
 

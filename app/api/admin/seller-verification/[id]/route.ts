@@ -6,7 +6,7 @@ import { UserRole, VerificationStatus } from '@/types';
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await requireRole([UserRole.ADMIN]);
@@ -14,8 +14,9 @@ export async function PUT(
 
     const body = await request.json();
     const { action, notes } = body;
+    const { id } = await params;
 
-    const profile = await SellerProfile.findById(params.id);
+    const profile = await SellerProfile.findById(id);
     if (!profile) {
       return NextResponse.json(
         { error: 'Seller profile not found' },
@@ -38,7 +39,7 @@ export async function PUT(
     }
 
     const updatedProfile = await SellerProfile.findByIdAndUpdate(
-      params.id,
+      id,
       updateData,
       { new: true }
     );
