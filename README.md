@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Weggo - Egypt's Trusted Marketplace
+
+A full-stack marketplace application built with Next.js 14+, TypeScript, TailwindCSS, and MongoDB. Features seller verification, AI-powered listing assistance, buyer support chat, and comprehensive admin controls.
+
+## Features
+
+### User Features
+- **Browse Listings**: Filter by category, location, price, condition
+- **Listing Details**: View detailed product information with seller details
+- **Authentication**: Email/OTP-based login (stub implementation)
+- **Multi-language**: Arabic/English toggle with RTL support
+- **Dark/Light Theme**: Toggle between themes
+- **Buyer Assist**: AI-powered chat to help find products
+- **Reporting**: Report suspicious listings
+
+### Seller Features
+- **Create Listings**: Post items for sale
+- **AI Suggestions**: Get AI-powered title, description, and price suggestions
+- **Seller Verification**: Upload ID documents for verification
+- **Manage Listings**: Edit and delete your listings
+
+### Admin Features
+- **Reports Management**: Review and resolve user reports
+- **Seller Verification Queue**: Approve/reject seller verification requests
+- **Flagged Listings**: Manage flagged content
+- **Feature Flags**: Enable/disable platform features
+- **Audit Logs**: Track admin actions
+
+## Tech Stack
+
+- **Frontend**: Next.js 14+ (App Router), React, TypeScript, TailwindCSS
+- **Backend**: Next.js API Routes, NextAuth.js
+- **Database**: MongoDB with Mongoose ODM
+- **Authentication**: NextAuth.js with JWT sessions
+- **Testing**: Vitest, React Testing Library
+- **Linting**: ESLint, Prettier
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js 18+ 
+- MongoDB (local or Atlas)
+- npm or yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Set up environment variables: `cp .env.example .env`
+4. Edit `.env` with your MongoDB URI and secrets
+5. Seed the database: `npm run seed`
+6. Run the development server: `npm run dev`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Testing
 
-To learn more about Next.js, take a look at the following resources:
+- Run tests: `npm test`
+- Run tests in watch mode: `npm run test:watch`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Deploy on Vercel with MongoDB Atlas. See full documentation in the repository for detailed setup instructions.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
