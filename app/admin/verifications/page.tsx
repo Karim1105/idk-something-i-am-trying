@@ -1,18 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { SellerProfile, VerificationStatus } from '@/types';
-
 export default function AdminVerificationsPage() {
-  const [profiles, setProfiles] = useState<SellerProfile[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // In a real app, we'd have an API endpoint for this
-    // For now, this is a stub page
-    setLoading(false);
-  }, []);
-
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <h1 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">

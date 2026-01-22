@@ -2,7 +2,7 @@ import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import dbConnect from '@/lib/dbConnect';
 import Listing from '@/models/Listing';
 import User from '@/models/User';
-import { UserRole, ListingCategory, ListingCondition, ListingStatus } from '@/types';
+import { ListingCategory, ListingCondition, ListingStatus } from '@/types';
 
 describe('Listings API', () => {
   beforeAll(async () => {
